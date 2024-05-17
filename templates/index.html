@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Evaluador de Emociones</title>
+  <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <link href="https://unpkg.com/@tailwindcss/custom-forms/dist/custom-forms.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', path='index.css') }}">
+</head>
+
+<body class="leading-normal tracking-normal text-indigo-400 m-6 bg-cover bg-fixed"
+  style="background-image: url({{ url_for('static', path='header.png') }});">
+  <div class="h-full">
+    <div class="w-full container mx-auto">
+      <div class="w-full flex items-center justify-between">
+        <a class="flex items-center text-indigo-400 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
+          href="#">
+          Rev<span
+            class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-pink-500 to-purple-500">Motion</span>
+        </a>
+        <div class="flex w-1/2 justify-end content-center">
+          <a class="inline-block text-blue-300 no-underline hover:text-green-500 hover:text-underline text-center h-10 p-2 md:h-auto md:p-4 transform hover:scale-125 duration-300 ease-in-out"
+            href="https://www.facebook.com/sharer/sharer.php?u=#" target="_blank"><!--Aqui va el link del repo-->
+            <svg class="fill-current h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill="none" d="M0 0h24v24H0z" />
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 5.303 3.438 9.801 8.202 11.387.6.11.793-.258.793-.577 0-.284-.012-1.297-.019-2.537-3.348.727-4.042-1.611-4.042-1.611-.546-1.385-1.332-1.754-1.332-1.754-1.087-.743.083-.728.083-.728 1.202.084 1.834 1.236 1.834 1.236 1.068 1.829 2.8 1.301 3.488.995.108-.774.419-1.301.762-1.601-2.665-.301-5.466-1.332-5.466-5.931 0-1.31.468-2.386 1.236-3.226-.124-.302-.536-1.523.116-3.176 0 0 1.007-.322 3.3 1.231.958-.267 1.982-.401 3.002-.405 1.02.004 2.044.138 3.002.405 2.292-1.553 3.297-1.231 3.297-1.231.656 1.653.24 2.874.116 3.176.77.84 1.234 1.916 1.234 3.226 0 4.61-2.805 5.625-5.475 5.921.43.371.816 1.102.816 2.222 0 1.605-.014 2.898-.014 3.292 0 .317.19.691.8.573C20.566 21.797 24 17.303 24 12c0-6.627-5.373-12-12-12z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!--Main-->
+    <div class="container pt-24 md:pt-36 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+      <!--Left Col-->
+      <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
+        <h1 class="my-4 text-3xl md:text-5xl text-white opacity-75 font-bold leading-tight text-center md:text-left">
+          Evaluaremos
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-pink-500 to-purple-500">
+            tu expresión
+          </span>
+        </h1>
+        <p class="leading-normal text-base md:text-2xl mb-8 text-center md:text-left">
+          Sube una foto y nuestro modelo de IA evaluara si estas triste, enojado o feliz.
+        </p>
+
+        <form class="bg-gray-900 opacity-75 w-full shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4"
+          enctype="multipart/form-data" id="formFoto">
+          <div class="mb-4 relative">
+            <label class="block text-blue-300 py-2 font-bold mb-2 cursor-pointer" for="photo" id="inputFoto">
+              Sube una foto
+            </label>
+            <input class="opacity-0 absolute inset-0 w-full h-full z-10 cursor-pointer" id="photo" type="file"
+              accept="image/*" />
+            <button
+              class="bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out absolute top-0 right-0 m-2">
+              Subir
+            </button>
+          </div>
+
+          <div class="flex items-center justify-between pt-4">
+            <button
+              class="bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
+              type="submit">
+              Enviar
+            </button>
+          </div>
+        </form>
+      </div>
+      <div id="imageContainer" class="w-full xl:w-3/5 p-12 overflow-hidden">
+        <img id="uploadedImage"
+          class="mx-auto w-full md:w-4/5 transform -rotate-6 transition hover:scale-105 duration-700 ease-in-out hover:rotate-6"
+          src="{{ url_for('static', path='Alegre-unscreen.gif') }}" />
+      </div>
+      <div class="container pt-20 md:pt-20 mx-auto flex items-center justify-center ">
+        <h1 id="predict"
+          class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-pink-500 to-purple-500 text-center transform transition hover:scale-105 duration-700 ease-in-out hover:rotate-6">
+        </h1>
+      </div>
+    </div>
+  </div>
+  <script src="{{ url_for('static', path='index.js') }}"></script>
+</body>
+
+</html>
