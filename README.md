@@ -8,7 +8,7 @@ Primeramente, antes de ejecutar y visualizar el proyecto con las páginas web, u
 
 1. (Opcional/Windows): Activamos las políticas de ejecución de Scripts con: `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass` (Se ejecuta en el powerShell de Visual Studio Code, una vez se cierra el proyecto, la política se restablecerá)
 
-(Opcional/MacOS): Activamos las políticas de ejecución de Scripts con: `chmod +x script.sh`
+   (Opcional/MacOS): Activamos las políticas de ejecución de Scripts con: `chmod +x script.sh`
 
 2. Creamos un entorno virtual de Python para la instalación de dependencias siguiendo los comandos:
 - Ejecutamos en nuestra terminal `pip install virtualenv`.
