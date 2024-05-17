@@ -6,8 +6,9 @@ En este proyecto consta de dos partes. Una es la codificación del API haciendo 
 Para hacer uso del proyecto debe clonar el repositorio de GitHub con el link: [https://github.com/AndresPatarroyo1517/RevMotion](https://github.com/AndresPatarroyo1517/RevMotion)
 Primeramente, antes de ejecutar y visualizar el proyecto con las páginas web, usted debe tener instalado en su máquina Python (Recomendable la versión 3.11.2 debido a que el desarrollo del proyecto se hizo en base a esta versión).
 
-1. (Opcional/Windows): Activamos las políticas de ejecución de Scripts con: Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass (Se ejecuta en el powerShell de Visual Studio Code, una vez se cierra el proyecto, la política se restablecerá)
-(Opcional/MacOS): Activamos las políticas de ejecución de Scripts con: chmod +x script.sh
+1. (Opcional/Windows): Activamos las políticas de ejecución de Scripts con: `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass` (Se ejecuta en el powerShell de Visual Studio Code, una vez se cierra el proyecto, la política se restablecerá)
+
+(Opcional/MacOS): Activamos las políticas de ejecución de Scripts con: `chmod +x script.sh`
 
 2. Creamos un entorno virtual de Python para la instalación de dependencias siguiendo los comandos:
 - Ejecutamos en nuestra terminal `pip install virtualenv`.
@@ -18,7 +19,7 @@ Primeramente, antes de ejecutar y visualizar el proyecto con las páginas web, u
 
 4. Una vez que se hayan instalado las librerías necesarias en el proyecto, ejecutaremos el proyecto con el siguiente comando: `uvicorn main:app --port 8080(Este puerto puede ser cualquiera que tenga disponible) --reload`.
 
-5. Con el servidor de uvicorn iniciado, iremos a la URL: [http://127.0.0.1:8000] (En este caso cambiará el puerto dependiendo del puerto seleccionado en el paso anterior).
+5. Con el servidor de uvicorn iniciado, iremos a la URL: `http://127.0.0.1:8000` (En este caso cambiará el puerto dependiendo del puerto seleccionado en el paso anterior).
 
 ## Tecnologías usadas
 
