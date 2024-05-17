@@ -1,7 +1,7 @@
 # Desarrollo de una Aplicación de Detección de Emociones
 ## Descripción
 En este proyecto consta de dos partes, una es la codificación del API haciendo uso de FastAPI como backend, y la segunda parte consta de realizar el HTML, CSS, JS usando JQuery y en nuestro caso TailWind CSS en vez de Bootstrap.
-El Api consiste en la implementación de un modelo de Inteligencia Artificial entrenado para reconocer las emociones de felicidad, frustración y tristeza, el API solo tiene dos endpoints, uno para hacer la carga del HTML y el otro para mandar al modelo las imágenes, para que este evalúa la foto y posteriormente mande una predicción.
+El API consiste en la implementación de un modelo de Inteligencia Artificial entrenado para reconocer las emociones de felicidad, frustración y tristeza, el API solo tiene dos endpoints, uno para hacer la carga del HTML y el otro para mandar al modelo las imágenes, para que este evalúa la foto y posteriormente mande una predicción.
 El frontend consiste en un HTML, Tailwind para los estilos de este y un archivo JavaScript que contiene los cambios dinámicos visibles del HTML y la petición post usando JQuery.
 
 ## Instrucciones de uso
