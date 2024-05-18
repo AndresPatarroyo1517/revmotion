@@ -1,5 +1,6 @@
 from fastapi import FastAPI, File, UploadFile, Request
 from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 import tensorflow as tf
 import tensorflow_hub as hub
 import numpy as np
@@ -10,6 +11,7 @@ from fastapi.templating import Jinja2Templates
 templates = Jinja2Templates(directory="templates")
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
+
 
 @app.get("/")
 def get_html(request: Request):
