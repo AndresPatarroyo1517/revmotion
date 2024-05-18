@@ -81,3 +81,4 @@ websockets
 Werkzeug
 wheel
 wrapt
+tensorflow[and-cuda]
