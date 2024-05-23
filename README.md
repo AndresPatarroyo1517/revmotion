@@ -19,7 +19,7 @@ Primeramente, antes de ejecutar y visualizar el proyecto con las páginas web, u
 
 4. Una vez que se hayan instalado las librerías necesarias en el proyecto, ejecutaremos el proyecto con el siguiente comando: `uvicorn main:app --port 8000 --reload`.
 
-5. Con el servidor de uvicorn iniciado, iremos a la URL: `http://127.0.0.1:8000` (En este caso cambiará el puerto dependiendo del puerto seleccionado en el paso anterior).
+5. Con el servidor de uvicorn iniciado, iremos a la URL: `http://127.0.0.1:8000`.
 
 ## Tecnologías usadas
 
