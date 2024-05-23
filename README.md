@@ -12,7 +12,7 @@ Primeramente, antes de ejecutar y visualizar el proyecto con las páginas web, u
 
 2. Creamos un entorno virtual de Python para la instalación de dependencias siguiendo los comandos:
 - Ejecutamos en nuestra terminal `pip install virtualenv`.
-- Creamos el entorno virtual en la terminal `virtualenv reconocimiento_emociones`.
+- Creamos el entorno virtual en la terminal `python -m virtualenv reconocimiento_emociones`.
 - Iniciamos el entorno virtual `reconocimiento_emociones\Scripts\activate`, en el caso de MacOS usamos `source reconocimiento_emociones/bin/activate`.
 
 3. Con el entorno virtual, procedemos a instalar las dependencias correspondientes en el `requirements.txt` usando este comando en la terminal: `pip install -r requirements.txt`
